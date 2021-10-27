@@ -4,7 +4,6 @@ import Model.PC1;
 import Model.PC2;
 import Model.PC3;
 import Model.Player;
-
 import java.util.Scanner;
 
 public class Match {
@@ -20,6 +19,7 @@ public class Match {
         String name = sc.nextLine();
         System.out.println();
          player = new Player(name);
+
     }
 
     public void GameStart(){
@@ -111,7 +111,7 @@ public class Match {
 
             System.out.println("\nGame Over");
             System.out.println(player.playerGetName()+" has "+player.TotalPoints()+" total point(s).");
-            System.out.println("Player 1 has "+PC1.TotalPoints()+" total point(s).");
+            System.out.println("Player 1 has "+ PC1.TotalPoints()+" total point(s).");
             System.out.println("Player 2 has "+PC2.TotalPoints()+" total point(s).");
             System.out.println("Player 3 has "+PC3.TotalPoints()+" total point(s).");
             System.out.print(ChecksWinner());
@@ -155,12 +155,10 @@ public class Match {
         {return "Tie, nobody wins.\n";}
 
         else {
-            int twenty_one = 21;
             int player_points = player.TotalPoints() - 21;
             int pc1_points = PC1.TotalPoints() - 21;
             int pc2_points = PC2.TotalPoints() - 21;
             int pc3_points = PC3.TotalPoints() - 21;
-            int closer = 0;
 
             if (player_points < pc1_points
                     && player_points < pc2_points
